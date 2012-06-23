@@ -4,8 +4,11 @@
   "description": "Sieve of Eratosthenes",
   "version": "0.0.1",
   "main": "sieve.js",
-  "dependencies": {
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/regality/node-sieve.git"
   },
+  "homepage": "https://github.com/regality/node-sieve",
   "engines": {
     "node": "*"
   }
