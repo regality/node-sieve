@@ -24,7 +24,8 @@ function seive(max, min) {
   numbers[0] = NON_PRIME;
   numbers[1] = NON_PRIME;
   numbers[2] = PRIME;
-  var primeCount = 1;
+
+  var primeCount = 0;
   if (min >= 2) ++primeCount;
 
   // use the seive of Eratosthenes to find all primes up to max
@@ -34,16 +35,16 @@ function seive(max, min) {
 
     if (prime !== max) {
       numbers[prime] = PRIME;
-      ++primeCount;
+      if (prime >= min) ++primeCount;
     }
 
     // mark all numbers divisible by that prime
     for (var i = prime * 2; i < max; i += prime) {
       numbers[i] = NON_PRIME;
-      if (prime >= min) ++primeCount;
     }
   }
 
+  console.log(primeCount);
   var primes = new Uint32Array(primeCount);
   var pi = 0;
   for (var i = min; i < max + 1; ++i) {
