@@ -1,9 +1,9 @@
 {
   "author": "Adam Blackburn",
-  "name": "seive",
+  "name": "sieve",
   "description": "Sieve of Eratosthenes",
   "version": "0.0.1",
-  "main": "seive.js",
+  "main": "sieve.js",
   "dependencies": {
   },
   "engines": {
