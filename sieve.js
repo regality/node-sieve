@@ -44,7 +44,6 @@ function seive(max, min) {
     }
   }
 
-  console.log(primeCount);
   var primes = new Uint32Array(primeCount);
   var pi = 0;
   for (var i = min; i < max + 1; ++i) {
