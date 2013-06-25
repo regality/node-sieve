@@ -20,28 +20,22 @@ function seive(max, min) {
     numbers[i] = (i % 2 ? UNKNOWN : NON_PRIME);
   }
 
-  // mark the first three
+  // mark the first two
   numbers[0] = NON_PRIME;
   numbers[1] = NON_PRIME;
-  numbers[2] = PRIME;
 
   var primeCount = 0;
-  if (min >= 2) ++primeCount;
 
   // use the seive of Eratosthenes to find all primes up to max
-  for (var prime = 2; prime < max;) {
-    // advance to next prime
-    while (prime < max && numbers[prime] !== UNKNOWN) ++prime;
-
-    if (prime !== max) {
-      numbers[prime] = PRIME;
-      if (prime >= min) ++primeCount;
-    }
-
+  for (var prime = 2; prime <= max;) {
+    numbers[prime] = PRIME;
+    if (prime >= min) ++primeCount;
     // mark all numbers divisible by that prime
-    for (var i = prime * 2; i < max; i += prime) {
+    for (var i = prime * 2; i <= max; i += prime) {
       numbers[i] = NON_PRIME;
     }
+    // advance to next prime
+    while (prime <= max && numbers[prime] !== UNKNOWN) ++prime;
   }
 
   var primes = new Uint32Array(primeCount);
