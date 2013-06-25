@@ -2,7 +2,7 @@
   "author": "Adam Blackburn",
   "name": "sieve",
   "description": "Sieve of Eratosthenes",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "sieve.js",
   "repository": {
     "type": "git",
