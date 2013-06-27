@@ -20,7 +20,7 @@ var primes = sieve(1000000);
 var primes = sieve(1000000, 100);
 ```
 
-The sieve returns a Uint32Array, unless you are using a shitty browser,
+The sieve returns a Uint32Array, unless you are using a terrible browser,
 in which case you just get an ordinary array.
 
 ## Perfomance
