@@ -1,12 +1,12 @@
 var numberSieve = require('./sieve')
-  , n = 100000000
+  , test = require('tape')
+  , fs = require('fs')
+  , n = 100
   ;
 
-console.log('generating primes...');
-
-console.time('primes generated in');
-var primes = numberSieve(n);
-console.timeEnd('primes generated in');
-
-console.log('found ' + primes.length + ' primes');
-console.log('largest prime found: ' + primes[primes.length - 1]);
+test('sieve', function(t) {
+    var res = numberSieve(n);
+    if (process.env.UPDATE) fs.writeFileSync('./fixture/result.json', JSON.stringify(res));
+    t.deepEqual(new Uint32Array(require('./fixture/result.json')), res);
+    t.end();
+});

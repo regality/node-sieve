@@ -11,5 +11,11 @@
   "homepage": "https://github.com/regality/node-sieve",
   "engines": {
     "node": "*"
+  },
+  "scripts": {
+    "test": "tape test.js"
+  },
+  "devDependencies": {
+    "tape": "~2.14.0"
   }
 }
