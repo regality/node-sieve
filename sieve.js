@@ -16,8 +16,11 @@ function seive(max, min) {
   var numbers = new Int8Array(max + 1);
 
   // all evens are non-primes
-  for (var i = 0; i < max + 1; ++i) {
-    numbers[i] = (i % 2 ? UNKNOWN : NON_PRIME);
+  for (var i = 1; i < max + 1; i += 2) {
+    numbers[i] = UNKNOWN;
+  }
+  for (var i = 0; i < max + 1; i += 2) {
+    numbers[i] = NON_PRIME;
   }
 
   // mark the first two
